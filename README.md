@@ -1,36 +1,62 @@
 # Presentación PFL - Sistema de Gestión de Reservas Proactivas
 
 ## Descripción
-Esta es una presentación interactiva desarrollada con Reveal.js y Vite, que muestra el proyecto de Sistema de Gestión de Reservas Proactivas.
+Proyecto de presentaciones múltiples que incluye una homepage principal, una presentación técnica interactiva y un pitch ejecutivo dinámico para el Sistema de Gestión de Reservas Proactivas.
 
 ## Estructura del Proyecto
 ```
 ├── public/
-│   └── icons/          # Iconos de tecnologías descargados localmente
+│   └── icons/                # Iconos de tecnologías descargados localmente
 ├── src/
 │   ├── scripts/
-│   │   └── main.js     # JavaScript principal de la aplicación
+│   │   ├── presentation.js   # JavaScript para la presentación técnica
+│   │   └── pitch.js          # JavaScript para el pitch ejecutivo
 │   └── styles/
-│       └── main.css    # Estilos CSS de la presentación
-├── index.html          # Archivo HTML principal
-├── vite.config.js      # Configuración de Vite
-└── package.json        # Dependencias y scripts del proyecto
+│       ├── presentation.css  # Estilos para la presentación técnica
+│       └── pitch.css         # Estilos para el pitch ejecutivo
+├── index.html                # Homepage principal con navegación
+├── presentation.html         # Presentación técnica completa
+├── pitch.html                # Pitch ejecutivo
+├── vite.config.js           # Configuración de Vite
+└── package.json             # Dependencias y scripts del proyecto
 ```
+
+## Páginas Disponibles
+
+### 🏠 Homepage (index.html)
+- Página principal con navegación elegante
+- Tarjetas interactivas para seleccionar presentación
+- Efectos visuales modernos y responsivos
+- Información del equipo
+
+### 📊 Presentación Técnica (presentation.html)
+- Presentación completa con Reveal.js
+- Timeline interactivo persistente
+- Detalles técnicos, arquitectura y roadmap
+- Navegación avanzada y responsive
+
+### 🎯 Pitch Ejecutivo (pitch.html)
+- Presentación ejecutiva con Impress.js
+- Enfoque en storytelling y valor de negocio
+- Animaciones dinámicas 3D
+- Barra de progreso y controles mejorados
 
 ## Características
 
 ### Tecnologías Utilizadas
 - **Vite** - Herramienta de construcción moderna
-- **Reveal.js** - Framework para presentaciones HTML
+- **Reveal.js** - Framework para presentación técnica
+- **Impress.js** - Framework para pitch dinámico
 - **CSS3** - Estilos avanzados con variables CSS y animaciones
 - **JavaScript ES6+** - Módulos y características modernas
 
 ### Funcionalidades
-- Timeline interactivo persistente
-- Animaciones suaves y efectos visuales
-- Diseño responsive
-- Navegación por teclado y mouse
-- Iconos de tecnologías almacenados localmente
+- Navegación centralizada desde homepage
+- Timeline interactivo (presentación técnica)
+- Animaciones 3D suaves (pitch ejecutivo)
+- Diseño responsive en todas las páginas
+- Botones de regreso al home
+- Efectos visuales y transiciones modernas
 
 ## Instalación y Uso
 

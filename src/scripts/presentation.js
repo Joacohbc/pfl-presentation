@@ -1,5 +1,5 @@
 // Importar los estilos CSS
-import '../styles/main.css';
+import '../styles/presentation.css';
 
 // Configuración del timeline
 const timelineSections = [
