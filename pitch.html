@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitch Ejecutivo</title>
+    
+    <!-- Importar la fuente Montserrat de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ESTILOS GENERALES Y NUEVA PALETA DE COLORES */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1a1a2e; /* Fondo de lienzo azul oscuro/morado */
+            color: #e0e0e0; /* Color de texto principal claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Oculta las barras de scroll */
+        }
+
+        /* Estilo base para cada diapositiva (step) */
+        .step {
+            position: relative;
+            width: 950px;
+            padding: 20px;
+            box-sizing: border-box;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            /* Transición más suave y ágil */
+            transition: all 0.9s cubic-bezier(0.7, 0, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        /* Opacidad para diapositivas no activas */
+        .step:not(.active) {
+            opacity: 0;
+        }
+        
+        /* COLORES */
+        .color-primario { color: #4CC9F0; } /* Cian brillante */
+        .texto-secundario { color: #bdbdbd; }
+
+        /* TIPOGRAFÍA */
+        h1, .texto-grande {
+            font-size: 68px;
+            font-weight: 700;
+            margin: 0;
+            color: #FFFFFF;
+            text-shadow: 0 0 15px rgba(76, 201, 240, 0.5);
+        }
+        
+        h2, .texto-mediano {
+            font-size: 52px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        p, .texto-pequeno {
+            font-size: 26px;
+            font-weight: 400;
+            margin-top: 20px;
+            max-width: 80%;
+        }
+
+        /* ÉNFASIS EN PALABRAS CLAVE */
+        strong {
+            font-weight: 700;
+            color: #F72585; /* Magenta vibrante para resaltar */
+            text-shadow: 0 0 8px rgba(247, 37, 133, 0.5);
+        }
+
+        /* ICONOS/EMOJIS ANIMADOS */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .animated-icon {
+            font-size: 80px;
+            margin-bottom: 25px;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        /* LISTAS */
+        .lista-base {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #e0e0e0;
+        }
+        .lista-base li {
+            margin-bottom: 15px;
+        }
+
+        /* Estilo para listas de problemas (X roja) */
+        .lista-problemas li::before {
+            content: '✗';
+            color: #F72585; /* Color magenta/rojo */
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        /* Estilo para listas de beneficios (Tick verde) */
+        .lista-beneficios li::before {
+            content: '✓';
+            color: #52B788; /* Un verde claro y positivo */
+            margin-right: 15px;
+            font-weight: 700;
+        }
+        
+        /* Diapositiva de cierre */
+        #cierre h1, #cierre p {
+            text-shadow: 0 2px 15px rgba(247, 37, 133, 0.7);
+        }
+
+        /* --- NUEVAS ANIMACIONES DE PALABRAS --- */
+        @keyframes fadeInScaleUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Clase base para elementos animados dentro de una slide */
+        .animated-word {
+            display: inline-block;
+            opacity: 0;
+            transform-origin: center;
+        }
+
+        /* Cuando la slide está activa, se aplica la animación */
+        .step.active .animated-word {
+            animation: fadeInScaleUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        .step.active .animated-line {
+            animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Clases para retrasar la animación */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor principal de Impress.js -->
+    <div id="impress">
+
+        <!-- DIAPOSITIVA 0: Título -->
+        <div id="slide-titulo" class="step" data-x="0" data-y="0" data-z="0">
+            <h1 class="texto-grande color-primario"><span class="animated-line">Sistema de Gestión de Reservas Proactivas</span></h1>
+            <p class="texto-pequeno texto-secundario"><span class="animated-line delay-1">Transformando la espera en oportunidad</span></p>
+        </div>
+
+        <!-- DIAPOSITIVA 1: La Frustración Universal -->
+        <div id="slide1" class="step" data-x="850" data-y="-150" data-z="-200" data-rotate-z="45">
+            <div class="animated-icon"><span class="animated-word">📅</span></div>
+            <h2 class="texto-mediano texto-secundario"><span class="animated-word delay-1">Todos hemos estado ahí</span></h2>
+        </div>
+
+        <!-- DIAPOSITIVA 2: El Recurso Desperdiciado -->
+        <div id="slide2" class="step" data-x="1400" data-y="400" data-z="-400" data-rotate-y="90">
+            <div class="animated-icon"><span class="animated-word">⏳</span></div>
+            <h2 class="texto-mediano color-primario"><span class="animated-line delay-1">Un recurso que se desperdicia</span></h2>
+            <ul class="lista-base lista-problemas">
+                <li class="animated-line delay-2">Un cupo queda libre por una cancelación</li>
+                <li class="animated-line delay-3">Ese hueco se pierde</li>
+                <li class="animated-line delay-4">Una persona sigue esperando</li>
+            </ul>
+        </div>
+        
+        <!-- NUEVA DIAPOSITIVA 3: Problema Real -->
+        <div id="slide-problema-real" class="step" data-x="850" data-y="950" data-z="-600" data-rotate-x="-30">
+            <div class="animated-icon"><span class="animated-word">📰</span></div>
+            <h2 class="texto-mediano texto-secundario"><span class="animated-line delay-1">Un problema <strong>real y medible</strong></span></h2>
+            <p class="texto-pequeno texto-secundario" style="font-style: italic; max-width: 90%;">
+                <span class="animated-line delay-2">"Hay 30.000 personas en ASSE en lista de espera para acceder a un equipo de salud"</span>
+            </p>
+            <p class="texto-pequeno texto-secundario" style="font-size: 20px; margin-top: 15px;">
+                 <span class="animated-line delay-3">- Cristina Lustemberg, Ministra de Salud Pública</span>
+            </p>
+        </div>
+
+        <!-- DIAPOSITIVA 4: La Pregunta Clave -->
+        <div id="slide-pregunta" class="step" data-x="0" data-y="950" data-z="-800" data-rotate-y="-45">
+            <div class="animated-icon"><span class="animated-word">💡</span></div>
+            <h1 class="texto-grande color-primario">
+                <span class="animated-word delay-1">¿Y si una cancelación</span>
+                <br>
+                <span class="animated-word delay-3">fuera tu próxima <strong>oportunidad</strong>?</span>
+            </h1>
+        </div>
+        
+        <!-- DIAPOSITIVA 5: La Solución: Un Nuevo Modelo -->
+        <div id="slide-solucion" class="step" data-x="0" data-y="850" data-z="-1000" data-scale="1.5">
+            <div class="animated-icon"><span class="animated-word">🌐</span></div>
+            <h2 class="texto-mediano color-primario"><span class="animated-word delay-1">Un ecosistema donde todos ganan</span></h2>
+        </div>
+
+        <!-- DIAPOSITIVA 6: Beneficio para el Usuario -->
+        <div id="slide-beneficio-usuario" class="step" data-x="-900" data-y="750" data-z="-1800" data-rotate-y="45" data-scale="1">
+            <div class="animated-icon"><span class="animated-word">⚡️</span></div>
+            <h2 class="texto-mediano color-primario"><span class="animated-line delay-1">De la espera a la oportunidad</span></h2>
+            <ul class="lista-base lista-beneficios">
+                <li class="animated-line delay-2">De <strong>buscar</strong> a ser <strong>encontrado</strong></li>
+                <li class="animated-line delay-3">De la <strong>sala de espera</strong> a <strong>tu horario</strong></li>
+                <li class="animated-line delay-4">De <strong>preguntar</strong> a ser <strong>notificado</strong></li>
+            </ul>
+        </div>
+        
+        <!-- DIAPOSITIVA 7: Beneficio para el Proveedor -->
+        <div id="slide-beneficio-proveedor" class="step" data-x="900" data-y="750" data-z="-1800" data-rotate-y="-45" data-scale="1">
+            <div class="animated-icon"><span class="animated-word">📈</span></div>
+            <h2 class="texto-mediano color-primario"><span class="animated-line delay-1">De cancelaciones a máxima rentabilidad</span></h2>
+            <ul class="lista-base lista-beneficios">
+                <li class="animated-line delay-2"><strong>Elimina los huecos</strong> imprevistos en tu agenda</li>
+                <li class="animated-line delay-3">Optimiza recursos y tiempo en <strong>piloto automático</strong></li>
+                <li class="animated-line delay-4">Fideliza a tus <strong>clientes atendidos antes</strong></li>
+            </ul>
+        </div>
+
+        <!-- DIAPOSITIVA 8: La Misión -->
+        <div id="slide-mision" class="step" data-x="0" data-y="0" data-z="-3000" data-scale="2">
+            <div class="animated-icon"><span class="animated-word">🎯</span></div>
+            <h1 class="texto-grande" style="font-weight: 400;"><span class="animated-word delay-1">Dueños de nuestro tiempo</span></h1>
+        </div>
+
+        <!-- DIAPOSITIVA 9: Cierre y Contacto -->
+        <div id="cierre" class="step" data-x="0" data-y="0" data-z="-4500" data-scale="2">
+            <div class="animated-icon"><span class="animated-word">👋</span></div>
+            <h1 class="texto-grande"><span class="animated-word delay-1">Gracias</span></h1>
+            <p class="texto-pequeno"><span class="animated-word delay-2">Joaquin, Cristopher y Fabricio</span></p>
+        </div>
+        
+        <!-- DIAPOSITIVA 10: Bibliografía -->
+        <div id="slide-bibliografia" class="step" data-x="0" data-y="0" data-z="-6000" data-scale="1.5">
+            <div class="animated-icon"><span class="animated-word">📚</span></div>
+            <h2 class="texto-mediano color-primario"><span class="animated-line delay-1">Referencias</span></h2>
+            <ul class="lista-base" style="font-size: 20px; text-align: left; max-width: 90%;">
+                <li class="animated-line delay-2" style="text-align: center;">
+                    Subrayado (2025, 6 de julio). *Lustemberg: hay 30.000 personas en ASSE en lista de espera para acceder a un equipo de salud mental*. Recuperado de <a href="https://www.subrayado.com.uy/lustemberg-hay-30000-personas-asse-lista-espera-acceder-un-equipo-salud-mental-n981468" target="_blank" rel="noopener noreferrer" style="color: #F72585; text-decoration: underline;">Subrayado.com.uy</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Vista general para ver todas las diapositivas -->
+        <div id="overview" class="step" data-x="400" data-y="400" data-z="-1500" data-scale="5">
+        </div>
+
+    </div>
+
+    <!-- Cargar el script de Impress.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script>
+    <script>
+        // Inicializar Impress.js
+        impress().init();
+    </script>
+
+</body>
+</html>
