@@ -359,9 +359,18 @@
             transition: all 0.3s ease;
         }
         
+        .roadmap-item .roadmap-icon {
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+        }
+        
+        .roadmap-item .roadmap-label {
+            transition: all 0.4s ease;
+        }
+        
         .roadmap-item.active .roadmap-icon {
-            transform: scale(1.2);
-            filter: drop-shadow(0 0 8px currentColor);
+            transform: scale(1.4);
+            filter: grayscale(0%) drop-shadow(0 0 12px currentColor);
         }
         
         .roadmap-item.active .roadmap-label {
@@ -371,6 +380,7 @@
         
         .roadmap-item.completed .roadmap-icon {
             opacity: 0.6;
+            filter: grayscale(100%);
         }
         
         .roadmap-item.completed .roadmap-label {
