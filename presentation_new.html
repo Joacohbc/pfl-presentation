@@ -794,21 +794,15 @@
                 clearTimeout(roadmapTimeout);
             }
             
-            // Hide roadmap specifically for 'construccion' state
-            if (currentState === 'construccion') {
-                timelineContainer.classList.remove('visible', 'slide-down');
-                timelineContainer.classList.add('hidden');
-            } else {
-                // Show roadmap immediately after transition
-                timelineContainer.classList.remove('hidden', 'slide-down');
-                timelineContainer.classList.add('visible');
-                
-                // Set timeout to slide down
-                roadmapTimeout = setTimeout(() => {
-                    timelineContainer.classList.remove('visible');
-                    timelineContainer.classList.add('slide-down');
-                }, 3000);
-            }
+            // Show roadmap immediately after transition
+            timelineContainer.classList.remove('hidden', 'slide-down');
+            timelineContainer.classList.add('visible');
+            
+            // Set timeout to slide down
+            roadmapTimeout = setTimeout(() => {
+                timelineContainer.classList.remove('visible');
+                timelineContainer.classList.add('slide-down');
+            }, 3000);
             
             const activeStateIndex = timelineSections.findIndex(s => s.state === currentState);
             
