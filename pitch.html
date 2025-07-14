@@ -120,11 +120,22 @@
         </div>
 
     </div>
+    
+    <a href="presentation.html" class="nav-button" title="Ver presentación completa">→</a>
+
 
     <!-- Cargar el script de Impress.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js"></script>
 
     <script>
+        window.addEventListener("hashchange", function() {
+            if(window.location.hash === "#/slide-bibliografia" || window.location.hash === "#/cierre") {
+                document.querySelector(".nav-button").style.display = "block";
+            } else {
+                document.querySelector(".nav-button").style.display = "none";
+            }
+        });
+        
         // Inicializar Impress.js
         impress().init();
     </script>
