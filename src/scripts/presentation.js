@@ -111,8 +111,44 @@ function init() {
     
     // Inicializar Reveal.js
     initializeReveal().then(() => {
+
+        const timeouts = [];
+
+        const cleanupTimeouts = () => {
+            timeouts.forEach(timeout => clearTimeout(timeout));
+            timeouts.length = 0;
+        };
+        
+        const addTimeout = (callback, delay) => {
+            const timeoutId = setTimeout(() => {
+                callback();
+            }, delay);
+            timeouts.push(timeoutId);
+        };
+
         // Configurar event listeners
-        deck.on('slidechanged', updateTimeline);
+        deck.on('slidechanged', () => {
+            updateTimeline();
+            cleanupTimeouts();
+
+            // Obtener cantidad de fragmentos en el slide actual
+            const currentSlide = deck.getCurrentSlide();
+            const fragments = currentSlide.querySelectorAll('.fragment');
+            const fragmentCount = fragments.length - 1;
+
+            addTimeout(() => {
+                console.log("Avanzando al primer fragmento");
+                deck.nextFragment();
+
+                for (let i = 1; i <= fragmentCount; i++) {
+                    addTimeout(() => {
+                        console.log("Avanzando fragmento", i, "de", fragmentCount);
+                        deck.nextFragment();
+                    }, i * 1200);
+                }
+            }, 1000);
+        });
+
         deck.on('ready', updateTimeline);
         
         // Actualizar timeline inicial
