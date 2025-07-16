@@ -134,6 +134,27 @@
                 </div>
             </section>
 
+            <section data-state="solucion">
+                <h2>Alcance del Proyecto 🎯</h2>
+                <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card fragment fade-up" style="border-color: var(--accent-green);">
+                        <span class="card-icon" style="color: var(--accent-green);">🏥</span>
+                        <h3 style="color: var(--accent-green) !important;">Enfoque Inicial: Sector Salud</h3>
+                        <p>El <strong>sector de la salud</strong> representa el nicho con la <strong>necesidad más urgente</strong> de optimización</p>
+                    </div>
+                    <div class="card fragment fade-up" style="border-color: #f39c12;">
+                        <span class="card-icon">🔮</span>
+                        <h3>Visión Extensible</h3>
+                        <p>La verdadera innovación reside en nuestra <strong>arquitectura adaptable</strong>, diseñada para expandirse a nuevos ámbitos</p>
+                    </div>
+                    <div class="card fragment fade-up" style="border-color: #4a90e2;">
+                        <span class="card-icon" style="color: #4a90e2;">🚀</span>
+                        <h3 style="color: #4a90e2 !important;">El Motor Universal</h3>
+                        <p>El mismo motor que optimizará una clínica dental podrá mañana orquestar <strong>todo tipos de logísticas de tiempo y recursos</strong>.</p>
+                    </div>
+                </div>
+            </section>
+
             <section data-state="inteligencia">
                 <h2>Funcionalidades Básicas 🏗️</h2>
                 <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
@@ -264,7 +285,7 @@
             <section data-state="construccion">
                 <h2>Stack Tecnológico 🛠️</h2>
                 <div class="tech-stack-grid">
-                    <div class="tech-category">
+                    <div class="tech-category fragment fade-left">
                         <h4>Cloud & Comms</h4>
                         <div class="tech-icons">
                             <div class="tech-icon"><img src="/icons/googlecloud.svg" alt="GCP"></div>
@@ -272,21 +293,21 @@
                         </div>
                     </div>
                     <div class="tech-main">
-                        <div class="tech-category">
+                        <div class="tech-category fragment fade-down">
                             <h4>Frontend</h4>
                             <div class="tech-icons">
                                 <div class="tech-icon"><img src="/icons/react.svg" alt="React"></div>
                                 <div class="tech-icon"><img src="/icons/tailwindcss.svg" alt="Tailwind CSS"></div>
                             </div>
                         </div>
-                        <div class="tech-category">
+                        <div class="tech-category fragment fade-in">
                             <h4>Backend</h4>
                             <div class="tech-icons">
                                 <div class="tech-icon"><img src="/icons/java.svg" alt="Java"></div>
                                 <div class="tech-icon"><img src="/icons/spring.svg" alt="Spring Boot"></div>
                             </div>
                         </div>
-                        <div class="tech-category">
+                        <div class="tech-category fragment fade-up">
                             <h4>Almacenamiento</h4>
                             <div class="tech-icons">
                                 <div class="tech-icon"><img src="/icons/postgresql.svg" alt="PostgreSQL"></div>
@@ -294,7 +315,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tech-category">
+                    <div class="tech-category fragment fade-right">
                         <h4>Asincronía</h4>
                         <div class="tech-icons">
                             <div class="tech-icon"><img src="/icons/rabbitmq.svg" alt="RabbitMQ"></div>
@@ -304,17 +325,102 @@
             </section>
 
             <section data-state="construccion">
-                <h2>Plan de Ejecución y Recursos 🗓️</h2>
-                <p>El plan se ejecutará entre agosto y noviembre en <strong>8 sprints</strong>.</p>
-                 <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
-                    <div class="card fragment fade-up"><span class="card-icon">🏗️</span><h3>Agosto</h3><p>Núcleo de Reservas y BackOffice.</p></div>
-                    <div class="card fragment fade-up"><span class="card-icon">🔔</span><h3>Septiembre</h3><p>Preferencias, Notificaciones y Reservas Avanzadas.</p></div>
-                    <div class="card fragment fade-up"><span class="card-icon">🧠</span><h3>Octubre</h3><p>Motor de Inteligencia Proactiva.</p></div>
-                    <div class="card fragment fade-up"><span class="card-icon">✅</span><h3>Noviembre</h3><p>Gestión de Cancelaciones y Prioridad.</p></div>
+                <h2>Plan de Ejecución y Recursos 🗓️</h2>                
+                <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <!-- Agosto -->
+                    <div class="month-column fragment fade-up">
+                        <div class="sprints-container">
+                            <div class="month-header agosto">📅 AGOSTO</div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 1</h4>
+                                <span class="sprint-dates">1-15 AGO</span>
+                                <p>🏗️ Flujo Básico de Reservas</p>
+                            </div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 2</h4>
+                                <span class="sprint-dates">18-29 AGO</span>
+                                <p>🎛️ Panel Administrativo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Septiembre -->
+                    <div class="month-column fragment fade-up">
+                        <div class="sprints-container">
+                            <div class="month-header septiembre">📅 SEPTIEMBRE</div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 3</h4>
+                                <span class="sprint-dates">1-12 SEP</span>
+                                <p>🔔 Preferencias y Notificaciones</p>
+                            </div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 4</h4>
+                                <span class="sprint-dates">15-26 SEP</span>
+                                <p>⏱️ Lista de Espera y Filtros</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Octubre -->
+                    <div class="month-column fragment fade-up">
+                        <div class="sprints-container">
+                            <div class="month-header octubre">📅 OCTUBRE</div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 5</h4>
+                                <span class="sprint-dates">29 SEP - 10 OCT</span>
+                                <p>🧠 Motor de Reagendamiento</p>
+                            </div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 6</h4>
+                                <span class="sprint-dates">13-24 OCT</span>
+                                <p>🔍 Búsqueda Asincrónica</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Noviembre -->
+                    <div class="month-column fragment fade-up">
+                        <div class="sprints-container">
+                            <div class="month-header noviembre">📅 NOVIEMBRE</div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 7</h4>
+                                <span class="sprint-dates">27 OCT - 7 NOV</span>
+                                <p>❌ Gestión de Cancelaciones</p>
+                            </div>
+                            <div class="card sprint-card">
+                                <h4>Sprint 8</h4>
+                                <span class="sprint-dates">10-21 NOV</span>
+                                <p>⚡ Sistema de Prioridades</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="cost-bar fragment fade-up">
                     <h3>Costo Total Estimado</h3>
                     <p><strong>USD 14,490</strong></p>
+                </div>
+            </section>
+            
+            <section data-state="construccion">
+                <h2>Responsabilidad Tecnológica 🛡️</h2>
+                <p>En un mundo automatizado, la tecnología debe ser inteligente, <strong>justa y responsable</strong>. Este no es un aspecto secundario, sino un <strong>pilar fundamental</strong> de nuestro proyecto.</p>
+                <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card fragment fade-up" style="border-color: #e74c3c;">
+                        <span class="card-icon" style="color: #e74c3c;">🔒</span>
+                        <h3 style="color: #e74c3c !important;">Seguridad y Privacidad</h3>
+                        <p>Protección mediante <strong>cifrado avanzado</strong>, recolección mínima de datos y <strong>control total del usuario</strong> con consentimiento explícito.</p>
+                    </div>
+                    <div class="card fragment fade-up" style="border-color: #f39c12;">
+                        <span class="card-icon" style="color: #f39c12;">⚖️</span>
+                        <h3 style="color: #f39c12 !important;">Algoritmos Justos</h3>
+                        <p>Sin "cajas negras". <strong>Reglas claras y objetivas</strong> basadas en acciones medibles, no perfiles personales.</p>
+                    </div>
+                    <div class="card fragment fade-up" style="border-color: #3498db;">
+                        <span class="card-icon" style="color: #3498db;">👁️</span>
+                        <h3 style="color: #3498db !important;">Transparencia Total</h3>
+                        <p>Cada resultado es <strong>explicable y auditable</strong>. Los usuarios conocen el estado del sistema, sus reservas y prioridad.</p>
+                    </div>
                 </div>
             </section>
             
