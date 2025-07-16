@@ -144,7 +144,7 @@ function init() {
                     addTimeout(() => {
                         console.log("Avanzando fragmento", i, "de", fragmentCount);
                         deck.nextFragment();
-                    }, i * 1200);
+                    }, i * 800);
                 }
             }, 1000);
         });
